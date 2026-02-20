@@ -37,7 +37,7 @@ fetch("data/words.json")
 // Main menu
 function initMainMenu(){
   document.body.innerHTML = `
-    <h1>Choisissez une langue (v12)</h1>
+    <h1>Choisissez une langue (v13)</h1>
     <div id="language-buttons">
       ${LANGUAGES.map(lang => `<button onclick="selectLanguage('${lang}')">${capitalize(lang)}</button>`).join('')}
     </div>
@@ -77,16 +77,17 @@ thudSound.play = function() {
     const g = ctx.createGain();
 
     o.type = 'sine';
-    o.frequency.value = 200;               // slightly higher, still dull
+    o.frequency.value = 250;                   // still low but more audible
 
-    g.gain.setValueAtTime(0.9, ctx.currentTime);      // start louder
-    g.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.5); // decay over 0.5s
+    // Start very loud and quick attack
+    g.gain.setValueAtTime(1.0, ctx.currentTime);    // max gain
+    g.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.35); // fade out
 
     o.connect(g);
     g.connect(ctx.destination);
 
     o.start();
-    o.stop(ctx.currentTime + 0.5);         // same duration
+    o.stop(ctx.currentTime + 0.35);           // slightly shorter but punchy
 };
 
 }
@@ -175,6 +176,16 @@ function checkAnswer(langClicked, wordClicked) {
   const correct = (langClicked === correctLang);
   popup.classList.remove('incorrect'); // reset class
 
+  // ------------------------
+  // Helper for special display names
+  function displayLanguageName(lang) {
+    switch(lang.toLowerCase()) {
+      case 'seereersine': return 'Seereer Sine';
+      case 'saafisaafi': return 'Saafi-Saafi';
+      default: return capitalize(lang);
+    }
+  }
+
   if (correct) {
     if (!q.attempted) correctFirstTry++;
     q.attempted = true;
@@ -182,17 +193,16 @@ function checkAnswer(langClicked, wordClicked) {
     popup.style.borderColor = "green";
     popup.innerHTML = `
       <h3>Correct</h3>
-      <p><strong>${capitalize(correctLang)}</strong></p>
+      <p><strong>${displayLanguageName(correctLang)}</strong></p>
       <p>${correctWord}</p>
       <img src="images/${q.id}.png">
       <button onclick="nextQuestion()">Prochaine question</button>
     `;
-
     popup.style.display = "block";
 
-    // --------------------------
+    // ------------------------
     // Play ding first, then word audio
-    dingSound.currentTime = 0; // reset in case it was recently played
+    dingSound.currentTime = 0; // reset
     dingSound.play().then(() => {
       const correctAudioPath = `audio/${correctLang}/${q.id}.mp3`;
       new Audio(correctAudioPath).play();
@@ -204,25 +214,24 @@ function checkAnswer(langClicked, wordClicked) {
     popup.classList.add('incorrect');
     popup.innerHTML = `
       <h3>Incorrect</h3>
-      <p><strong>${capitalize(langClicked)}</strong></p>
+      <p><strong>${displayLanguageName(langClicked)}</strong></p>
       <p>${wordClicked}</p>
       <img src="images/${q.id}.png">
       <button onclick="closePopup()">Essayer encore</button>
     `;
-
     popup.style.display = "block";
 
-    // --------------------------
-    // Programmatic dull beep
+    // ------------------------
+    // Programmatic loud dull beep
     thudSound.play();
-    // Play clicked word audio after a short delay
+
+    // Play clicked word audio shortly after
     setTimeout(() => {
       const clickedAudioPath = `audio/${langClicked}/${q.id}.mp3`;
       new Audio(clickedAudioPath).play();
     }, 400);
   }
 }
-
 
 // ------------------------
 // Close incorrect popup
