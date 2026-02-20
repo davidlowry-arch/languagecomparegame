@@ -13,9 +13,11 @@ let wordsData;
 let selectedLanguage;
 let currentQuestionIndex = 0;
 let questions = [];
-let thudSound;
 let correctFirstTry = 0;
-let dingSound = new Audio('sounds/ding.mp3');
+
+// Preload sounds
+const dingSound = new Audio('sounds/ding.mp3');
+const thudSound = new Audio('sounds/thud.mp3');
 
 // ------------------------
 // Utility: shuffle arrays
@@ -28,7 +30,6 @@ function capitalize(str){
   return str.charAt(0).toUpperCase() + str.slice(1);
 }
 
-// ------------------------
 // Display language names consistently
 function displayLanguageName(lang) {
     switch(lang.toLowerCase()) {
@@ -52,7 +53,7 @@ fetch("data/words.json")
 // Main menu
 function initMainMenu(){
   document.body.innerHTML = `
-    <h1>Choisissez une langue (v16)</h1>
+    <h1>Choisissez une langue (v15)</h1>
     <div id="language-buttons">
       ${LANGUAGES.map(lang => `<button onclick="selectLanguage('${lang}')">${displayLanguageName(lang)}</button>`).join('')}
     </div>
@@ -76,37 +77,6 @@ function startGame(){
   questions = shuffleArray(wordsData).slice(0,20).map(q => ({...q, attempted: false}));
   correctFirstTry = 0;
   loadQuestion();
-
-  // Preload thud sound (loud beep)
-  thudSound.play = function() {
-    const o1 = ctx.createOscillator();
-    const o2 = ctx.createOscillator();
-    const g = ctx.createGain();
-
-    // Low sine for body
-    o1.type = 'sine';
-    o1.frequency.value = 350;
-
-    // High sine for punch
-    o2.type = 'sine';
-    o2.frequency.value = 900;
-
-    // Gain envelope
-    g.gain.setValueAtTime(0.0, ctx.currentTime);
-    g.gain.linearRampToValueAtTime(10.0, ctx.currentTime + 0.02); // very loud attack
-    g.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.25); // fast decay
-
-    // Connect
-    o1.connect(g);
-    o2.connect(g);
-    g.connect(ctx.destination);
-
-    // Start/stop
-    o1.start();
-    o2.start();
-    o1.stop(ctx.currentTime + 0.25);
-    o2.stop(ctx.currentTime + 0.25);
-};
 }
 
 // ------------------------
@@ -222,7 +192,8 @@ function checkAnswer(langClicked, wordClicked) {
     `;
     popup.style.display = "block";
 
-    // Loud beep
+    // Play thud.mp3 for wrong answer
+    thudSound.currentTime = 0;
     thudSound.play();
 
     // Clicked word audio
