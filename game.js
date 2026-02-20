@@ -35,7 +35,7 @@ fetch("data/words.json")
 // Main menu
 function initMainMenu(){
   document.body.innerHTML = `
-    <h1>Choisissez une langue (v3)</h1>
+    <h1>Choisissez une langue (v4)</h1>
     <div id="language-buttons">
       ${LANGUAGES.map(lang => `<button onclick="selectLanguage('${lang}')">${capitalize(lang)}</button>`).join('')}
     </div>
@@ -143,34 +143,28 @@ function checkAnswer(langClicked, wordClicked){
     `;
 
   } else {
-
     const clickedAudioPath = `audio/${langClicked}/${q.id}.mp3`;
 
+    // Play dull thud
     thudSound.play();
 
+    // Then play the audio for the language they actually clicked
     setTimeout(() => {
-      new Audio(clickedAudioPath).play();
+        new Audio(clickedAudioPath).play();
     }, 400);
 
+    // Set up popup like the correct one, but with red border
     popup.style.borderColor = "red";
     popup.innerHTML = `
-      <h3>Incorrect</h3>
-
-      <p>You chose:</p>
-      <p><strong>${capitalize(langClicked)}</strong></p>
-      <p>${wordClicked}</p>
-
-      <hr>
-
-      <p>Correct answer:</p>
-      <p><strong>${capitalize(correctLang)}</strong></p>
-      <p>${correctWord}</p>
-
-      <button onclick="closePopup()">Continuer</button>
+        <h3>Incorrect</h3>
+        <p><strong>${capitalize(langClicked)}</strong></p>
+        <p>${wordClicked}</p>
+        <img src="images/${q.id}.png">
+        <button onclick="closePopup()">Essayer encore</button>
     `;
-  }
-
-  popup.style.display = "block";
+    }
+    
+    popup.style.display = "block";
 }
 
 // ------------------------
