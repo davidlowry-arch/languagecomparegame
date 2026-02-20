@@ -47,7 +47,7 @@ function initMainMenu(){
   document.body.innerHTML = `
     <h1>Choisissez une langue (v14)</h1>
     <div id="language-buttons">
-      ${LANGUAGES.map(lang => `<button onclick="selectLanguage('${lang}')">${displayLanguageName(selectedLanguage)}</button>`).join('')}
+      ${LANGUAGES.map(lang => `<button onclick="selectLanguage('${lang}')">${displayLanguageName(lang)}</button>`).join('')}
     </div>
   `;
 }
@@ -184,6 +184,9 @@ function checkAnswer(langClicked, wordClicked) {
 
   const correct = (langClicked === correctLang);
   popup.classList.remove('incorrect'); // reset class
+
+  // Use the global displayLanguageName() here — do NOT redefine it
+
 
   // ------------------------
   // Helper for special display names
