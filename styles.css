@@ -48,14 +48,18 @@ button:hover {
     margin: 0 auto 2em auto;
 }
 
-/* Word buttons grid container */
+/* ===========================
+   Word buttons container
+   =========================== */
 .button-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.4em; /* smaller gap to make buttons closer together */
+    display: flex;             /* flexible layout */
+    flex-wrap: wrap;           /* allow buttons to wrap to next line */
+    justify-content: center;   /* center each line of buttons */
+    gap: 0.3em;                /* reduce spacing between buttons */
     max-width: 90vw;
     margin: 0 auto 2em auto;
 }
+
 
 /* ===========================
    Progress bar
