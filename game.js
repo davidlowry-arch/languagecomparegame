@@ -15,6 +15,7 @@ let currentQuestionIndex = 0;
 let questions = [];
 let thudSound;
 let correctFirstTry = 0;
+let dingSound = new Audio('sounds/ding.mp3');
 
 // ------------------------
 // Utility: shuffle arrays
@@ -36,7 +37,7 @@ fetch("data/words.json")
 // Main menu
 function initMainMenu(){
   document.body.innerHTML = `
-    <h1>Choisissez une langue (v9)</h1>
+    <h1>Choisissez une langue (v10)</h1>
     <div id="language-buttons">
       ${LANGUAGES.map(lang => `<button onclick="selectLanguage('${lang}')">${capitalize(lang)}</button>`).join('')}
     </div>
@@ -159,22 +160,18 @@ function deduplicateOptions(options, correctLang) {
 }
 
 // ------------------------
-function checkAnswer(langClicked, wordClicked){
+function checkAnswer(langClicked, wordClicked) {
   const q = questions[currentQuestionIndex];
   const correctLang = selectedLanguage;
   const correctWord = q.forms[correctLang];
   const popup = document.getElementById("popup");
 
   const correct = (langClicked === correctLang);
-
   popup.classList.remove('incorrect'); // reset class
 
-  if(correct){
-    if(!q.attempted) correctFirstTry++;
+  if (correct) {
+    if (!q.attempted) correctFirstTry++;
     q.attempted = true;
-
-    const correctAudioPath = `audio/${correctLang}/${q.id}.mp3`;
-    new Audio(correctAudioPath).play();
 
     popup.style.borderColor = "green";
     popup.innerHTML = `
@@ -184,13 +181,19 @@ function checkAnswer(langClicked, wordClicked){
       <img src="images/${q.id}.png">
       <button onclick="nextQuestion()">Prochaine question</button>
     `;
+
+    popup.style.display = "block";
+
+    // --------------------------
+    // Play ding first, then word audio
+    dingSound.currentTime = 0; // reset in case it was recently played
+    dingSound.play().then(() => {
+      const correctAudioPath = `audio/${correctLang}/${q.id}.mp3`;
+      new Audio(correctAudioPath).play();
+    }).catch(err => console.warn("Ding play failed:", err));
+
   } else {
     q.attempted = true;
-
-    const clickedAudioPath = `audio/${langClicked}/${q.id}.mp3`;
-
-    thudSound.play();
-    setTimeout(() => { new Audio(clickedAudioPath).play(); }, 400);
 
     popup.classList.add('incorrect');
     popup.innerHTML = `
@@ -200,10 +203,20 @@ function checkAnswer(langClicked, wordClicked){
       <img src="images/${q.id}.png">
       <button onclick="closePopup()">Essayer encore</button>
     `;
-  }
 
-  popup.style.display = "block";
+    popup.style.display = "block";
+
+    // --------------------------
+    // Programmatic dull beep
+    thudSound.play();
+    // Play clicked word audio after a short delay
+    setTimeout(() => {
+      const clickedAudioPath = `audio/${langClicked}/${q.id}.mp3`;
+      new Audio(clickedAudioPath).play();
+    }, 400);
+  }
 }
+
 
 // ------------------------
 // Close incorrect popup
