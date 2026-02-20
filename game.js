@@ -14,6 +14,7 @@ let selectedLanguage;
 let currentQuestionIndex = 0;
 let questions = [];
 let thudSound;
+let correctFirstTry = 0;
 
 // ------------------------
 // Utility: shuffle arrays
@@ -35,7 +36,7 @@ fetch("data/words.json")
 // Main menu
 function initMainMenu(){
   document.body.innerHTML = `
-    <h1>Choisissez une langue (v4)</h1>
+    <h1>Choisissez une langue (v5)</h1>
     <div id="language-buttons">
       ${LANGUAGES.map(lang => `<button onclick="selectLanguage('${lang}')">${capitalize(lang)}</button>`).join('')}
     </div>
@@ -61,11 +62,12 @@ function selectLanguage(lang){
 // Start game
 function startGame(){
   currentQuestionIndex = 0;
-  questions = shuffleArray(wordsData).slice(0,20);
+  questions = shuffleArray(wordsData).slice(0,20).map(q => ({...q, attempted: false}));
+  correctFirstTry = 0;
   loadQuestion();
+
   // Preload thud sound
   thudSound = new Audio();
-  // Generate a simple dull thud programmatically (sine + short envelope)
   const AudioContext = window.AudioContext || window.webkitAudioContext;
   const ctx = new AudioContext();
   thudSound.play = function(){
@@ -93,7 +95,7 @@ function loadQuestion(){
     word: q.forms[lang]
   }));
 
-  // Sort alphabetically by the displayed word
+  // Sort alphabetically by displayed word
   options.sort((a, b) => 
     a.word.localeCompare(b.word, 'fr', { sensitivity: 'base' })
   );
@@ -103,8 +105,7 @@ function loadQuestion(){
     return `<button onclick="checkAnswer('${opt.lang}', decodeURIComponent('${encodedWord}'))">
                ${opt.word}
             </button>`;
-}).join('');
-
+  }).join('');
 
   document.body.innerHTML = `
     <h2>${q.gloss_fr}</h2>
@@ -116,19 +117,20 @@ function loadQuestion(){
   `;
 }
 
-
 // ------------------------
 function checkAnswer(langClicked, wordClicked){
-
   const q = questions[currentQuestionIndex];
   const correctLang = selectedLanguage;
   const correctWord = q.forms[correctLang];
-
   const popup = document.getElementById("popup");
 
   const correct = (langClicked === correctLang);
 
+  popup.classList.remove('incorrect'); // reset class
+
   if(correct){
+    if(!q.attempted) correctFirstTry++;
+    q.attempted = true;
 
     const correctAudioPath = `audio/${correctLang}/${q.id}.mp3`;
     new Audio(correctAudioPath).play();
@@ -141,30 +143,25 @@ function checkAnswer(langClicked, wordClicked){
       <img src="images/${q.id}.png">
       <button onclick="nextQuestion()">Prochaine question</button>
     `;
-
   } else {
+    q.attempted = true;
+
     const clickedAudioPath = `audio/${langClicked}/${q.id}.mp3`;
 
-    // Play dull thud
     thudSound.play();
+    setTimeout(() => { new Audio(clickedAudioPath).play(); }, 400);
 
-    // Then play the audio for the language they actually clicked
-    setTimeout(() => {
-        new Audio(clickedAudioPath).play();
-    }, 400);
-
-    // Set up popup like the correct one, but with red border
-    popup.style.borderColor = "red";
+    popup.classList.add('incorrect');
     popup.innerHTML = `
-        <h3>Incorrect</h3>
-        <p><strong>${capitalize(langClicked)}</strong></p>
-        <p>${wordClicked}</p>
-        <img src="images/${q.id}.png">
-        <button onclick="closePopup()">Essayer encore</button>
+      <h3>Incorrect</h3>
+      <p><strong>${capitalize(langClicked)}</strong></p>
+      <p>${wordClicked}</p>
+      <img src="images/${q.id}.png">
+      <button onclick="closePopup()">Essayer encore</button>
     `;
-    }
-    
-    popup.style.display = "block";
+  }
+
+  popup.style.display = "block";
 }
 
 // ------------------------
@@ -191,8 +188,18 @@ function showFinalScreen(){
   document.body.innerHTML = `
     <h1>Félicitations !</h1>
     <p>Vous avez terminé le quiz.</p>
+    <p>Score : ${correctFirstTry} / 20</p>
+    <p style="font-size:0.8em; color:#555;">
+      Seules les réponses correctes dès le premier essai ont été comptées.
+    </p>
     <button onclick="initMainMenu()">Retour au menu</button>
+    <button onclick="startGameAgain()">Rejouer</button>
   `;
+}
+
+function startGameAgain() {
+  correctFirstTry = 0;
+  startGame();
 }
 
 window.addEventListener("beforeunload", function (e) {
