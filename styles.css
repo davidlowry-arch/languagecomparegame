@@ -1,93 +1,38 @@
 /* ===========================
-   Global Styles
+   Global styles
    =========================== */
-body {
-    font-family: Arial, sans-serif;
-    font-size: 18px;         /* readable on mobile */
-    padding: 10px;
-    margin: 0;
-    background-color: #fdfdfd;
-    text-align: center;
+
+/* Base font scales with viewport width, clamped to stay readable */
+html {
+    font-size: clamp(14px, 4vw, 24px);
 }
 
-/* Headings */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 2vw;
+    text-align: center;
+    background-color: #fdfdfd;
+}
+
+/* Headings scale relative to base font */
 h1, h2, h3 {
-    margin: 10px 0;
+    font-size: 1.5em;
+    margin: 1em 0;
 }
 
 /* ===========================
-   Buttons (language & word buttons)
+   Buttons
    =========================== */
 button {
-    font-size: 18px;        /* bigger text for mobile */
-    padding: 12px;
-    margin: 4px;
-    border-radius: 8px;
-    cursor: pointer;
-    border: 1px solid #333;
-    background-color: #fff;
-    transition: background-color 0.2s, transform 0.1s;
-}
-/* Reset and base font */
-html {
-    font-size: 4vw; /* base font scales with viewport width */
-}
-
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 2vw;
-    text-align: center;
-}
-
-/* Headings scale automatically */
-h1, h2, h3 {
-    font-size: 1.5em;  /* relative to base font */
-    margin: 1em 0;
-}
-
-/* Buttons scale automatically */
-button {
-    font-size: 1em;    /* same as base font */
-    padding: 0.5em 1em;
+    font-size: 1em;        /* inherits from base font */
+    padding: 0.5em 1em;    /* relative padding */
     margin: 0.3em;
     border-radius: 0.5em;
+    border: 0.08em solid #333; /* scales with font */
     cursor: pointer;
-}
-
-/* Button container (2 columns) */
-button-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.5em;
-    max-width: 90vw;
-    margin: 0 auto;
-}
-
-/* Images scale with viewport */
-img {
-    max-width: 80vw;
-    height: auto;
-    margin: 1em 0;
-}
-
-/* Popup styling */
-#popup {
-    display: none;
-    position: fixed;
-    top: 10vh;
-    left: 50%;
-    transform: translateX(-50%);
-    padding: 2vw;
-    border: 0.5em solid; /* border scales with font */
     background-color: #fff;
-    z-index: 1000;
-    text-align: center;
-}
-
-/* Final screen */
-#final-screen {
-    margin-top: 2em;
+    transition: background-color 0.2s, transform 0.1s;
 }
 
 button:hover {
@@ -95,31 +40,31 @@ button:hover {
     transform: scale(1.05);
 }
 
-/* Language buttons grid */
+/* Language selection buttons grid */
 #language-buttons {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-    max-width: 400px;
-    margin: 0 auto 20px auto;
+    gap: 0.5em;
+    max-width: 90vw;
+    margin: 0 auto 2em auto;
 }
 
-/* Word buttons grid */
+/* Word buttons grid container */
 button-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-    max-width: 400px;
-    margin: 0 auto 20px auto;
+    gap: 0.5em;
+    max-width: 90vw;
+    margin: 0 auto 2em auto;
 }
 
 /* ===========================
    Images
    =========================== */
 img {
-    max-width: 200px;
+    max-width: 80vw;
     height: auto;
-    margin: 10px 0;
+    margin: 1em 0;
 }
 
 /* ===========================
@@ -128,11 +73,11 @@ img {
 #popup {
     display: none;
     position: fixed;
-    top: 20%;
+    top: 10vh;
     left: 50%;
     transform: translateX(-50%);
-    padding: 20px;
-    border: 5px solid;       /* green/red set dynamically */
+    padding: 2vw;
+    border: 0.5em solid;       /* border scales with font */
     background-color: #fff;
     z-index: 1000;
     text-align: center;
@@ -142,28 +87,26 @@ img {
    Final screen
    =========================== */
 #final-screen {
-    margin-top: 20px;
+    margin-top: 2em;
 }
 
 /* ===========================
-   Responsive adjustments
+   Responsive adjustments (optional)
    =========================== */
 @media (max-width: 600px) {
     body {
-        font-size: 20px;
-        padding: 12px;
-    }
-
-    button {
-        font-size: 20px;
-        padding: 14px;
+        padding: 3vw;
     }
 
     #language-buttons, button-container {
-        max-width: 100%;
+        gap: 0.8em;
+    }
+
+    button {
+        padding: 0.6em 1em;
     }
 
     img {
-        max-width: 100%;
+        max-width: 90vw;
     }
 }
