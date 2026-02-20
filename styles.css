@@ -2,7 +2,7 @@
    Global styles
    =========================== */
 html {
-    font-size: clamp(20px, 6vw, 34px);
+    font-size: clamp(22px, 6vw, 40px); /* slightly larger base font */
 }
 
 body {
@@ -14,7 +14,7 @@ body {
 }
 
 h1, h2, h3 {
-    font-size: 1.5em;
+    font-size: 1.6em; /* slightly larger headings */
     margin: 1em 0;
 }
 
@@ -22,14 +22,15 @@ h1, h2, h3 {
    Buttons
    =========================== */
 button {
-    font-size: 1em;        
-    padding: 0.8em 1.5em;
-    margin: 0.5em;
+    font-size: 1.3em;       /* bigger font for word buttons */
+    padding: 1em 1.5em;
+    margin: 0.3em;          /* reduce spacing slightly */
     border-radius: 0.5em;
     border: 0.08em solid #333;
     cursor: pointer;
     background-color: #fff;
     transition: background-color 0.2s, transform 0.1s;
+    word-break: break-word;  /* prevent very long words from overflowing */
 }
 
 button:hover {
@@ -50,9 +51,19 @@ button:hover {
 .button-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 0.5em;
+    gap: 0.4em; /* smaller gap to make buttons closer together */
     max-width: 90vw;
     margin: 0 auto 2em auto;
+}
+
+/* ===========================
+   Progress bar
+   =========================== */
+#progress {
+    font-size: 1.2em;
+    margin-bottom: 1em;
+    font-weight: bold;
+    color: #333;
 }
 
 /* ===========================
@@ -89,12 +100,12 @@ img {
 
 #popup h3 {
     margin-top: 0;
-    font-size: 1.2em;
+    font-size: 1.4em;
 }
 
 #popup p {
     margin: 0.5em 0;
-    font-size: 1em;
+    font-size: 1.2em;
 }
 
 /* ===========================
@@ -102,7 +113,7 @@ img {
    =========================== */
 #final-screen {
     margin-top: 2em;
-    font-size: 1.1em;
+    font-size: 1.3em;
 }
 
 /* ===========================
@@ -114,11 +125,12 @@ img {
     }
 
     #language-buttons, .button-container {
-        gap: 0.8em;
+        gap: 0.6em;
     }
 
     button {
-        padding: 0.7em 1.2em;
+        padding: 0.8em 1.2em;
+        font-size: 1.1em;
     }
 
     img {

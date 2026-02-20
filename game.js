@@ -36,7 +36,7 @@ fetch("data/words.json")
 // Main menu
 function initMainMenu(){
   document.body.innerHTML = `
-    <h1>Choisissez une langue (v5)</h1>
+    <h1>Choisissez une langue (v6)</h1>
     <div id="language-buttons">
       ${LANGUAGES.map(lang => `<button onclick="selectLanguage('${lang}')">${capitalize(lang)}</button>`).join('')}
     </div>
@@ -89,10 +89,13 @@ function startGame(){
 function loadQuestion(){
   const q = questions[currentQuestionIndex];
 
+  // Progress indicator
+  const progressHtml = `<div id="progress">Question ${currentQuestionIndex + 1} / ${questions.length}</div>`;
+
   // Build array of options for this question
   const options = LANGUAGES.map(lang => ({
     lang: lang,
-    word: q.forms[lang]
+    word: q.forms[lang] || ""
   }));
 
   // Sort alphabetically by displayed word
@@ -108,6 +111,7 @@ function loadQuestion(){
   }).join('');
 
   document.body.innerHTML = `
+    ${progressHtml}
     <h2>${q.gloss_fr}</h2>
     <img src="images/${q.id}.png"><br><br>
     <div class="button-container">
