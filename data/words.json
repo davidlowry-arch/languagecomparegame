@@ -1,0 +1,1220 @@
+{
+  "languages": [
+    "balante",
+    "bandial",
+    "bayot",
+    "fonyi",
+    "kassa",
+    "laalaa",
+    "mancagne",
+    "manjak",
+    "ndut",
+    "noon",
+    "pulaar",
+    "saafisaafi",
+    "seereersine",
+    "wolof"
+  ],
+  "words": [
+    {
+      "id": "abeille",
+      "gloss_fr": "abeille",
+      "forms": {
+        "balante": "ahú",
+        "bandial": "yaaj",
+        "bayot": "daĩ",
+        "fonyi": "yaaj",
+        "kassa": "yaaj",
+        "laalaa": "huum",
+        "mancagne": "unob",
+        "manjak": "uwáaj",
+        "ndut": "kúum",
+        "noon": "huum",
+        "pulaar": "ñaaki",
+        "saafisaafi": "kuum",
+        "seereersine": "nquuraand",
+        "wolof": "yàmb"
+      }
+    },
+    {
+      "id": "acheter",
+      "gloss_fr": "acheter",
+      "forms": {
+        "balante": "gwúsé",
+        "bandial": "funnom",
+        "bayot": "ozeu",
+        "fonyi": "funoom",
+        "kassa": "húyooŋul",
+        "laalaa": "lom",
+        "mancagne": "pnug",
+        "manjak": "kawel",
+        "ndut": "lom",
+        "noon": "kilom",
+        "pulaar": "soodde",
+        "saafisaafi": "rom",
+        "seereersine": "jik",
+        "wolof": "jënd"
+      }
+    },
+    {
+      "id": "aiguiser",
+      "gloss_fr": "aiguiser",
+      "forms": {
+        "balante": "ɓɓenŧe",
+        "bandial": "enow",
+        "bayot": "kanũ",
+        "fonyi": "eñaw",
+        "kassa": "kanow",
+        "laalaa": "daas",
+        "mancagne": "ptuum",
+        "manjak": "naman",
+        "ndut": "dahas",
+        "noon": "kidaas",
+        "pulaar": "welnude",
+        "saafisaafi": "daas",
+        "seereersine": "lak",
+        "wolof": "daas"
+      }
+    },
+    {
+      "id": "araignee",
+      "gloss_fr": "araignee",
+      "forms": {
+        "balante": "ngúggúbe",
+        "bandial": "galiroŋ",
+        "bayot": "yádelabudel",
+        "fonyi": "ejeesoora",
+        "kassa": "kageesa",
+        "laalaa": "nan",
+        "mancagne": "ulaar",
+        "manjak": "uláar",
+        "ndut": "nen",
+        "noon": "nan",
+        "pulaar": "njamala",
+        "saafisaafi": "nand",
+        "seereersine": "poroxolaac",
+        "wolof": "jargoñ"
+      }
+    },
+    {
+      "id": "arbre",
+      "gloss_fr": "arbre",
+      "forms": {
+        "balante": "btaa",
+        "bandial": "bununuh",
+        "bayot": "búlo",
+        "fonyi": "búbaar",
+        "kassa": "bunuunuk",
+        "laalaa": "kedek",
+        "mancagne": "bko",
+        "manjak": "bëko",
+        "ndut": "kilik",
+        "noon": "kedik",
+        "pulaar": "lekki",
+        "saafisaafi": "kidig",
+        "seereersine": "ndaxar",
+        "wolof": "garab"
+      }
+    },
+    {
+      "id": "argent",
+      "gloss_fr": "argent",
+      "forms": {
+        "balante": "gigobor",
+        "bandial": "síralam",
+        "bayot": "ehalis",
+        "fonyi": "ékori",
+        "kassa": "édalam",
+        "laalaa": "kooppaꞌ",
+        "mancagne": "itaka",
+        "manjak": "ucáam",
+        "ndut": "hélíis",
+        "noon": "kopaꞌ",
+        "pulaar": "kaalis",
+        "saafisaafi": "koppor",
+        "seereersine": "xaaliis",
+        "wolof": "xaalis"
+      }
+    },
+    {
+      "id": "boire",
+      "gloss_fr": "boire",
+      "forms": {
+        "balante": "ginsiigi",
+        "bandial": "marem",
+        "bayot": "kaliimo",
+        "fonyi": "baraan",
+        "kassa": "bahob",
+        "laalaa": "an",
+        "mancagne": "pdaan",
+        "manjak": "përan",
+        "ndut": "han",
+        "noon": "kiꞌan",
+        "pulaar": "yarde",
+        "saafisaafi": "an",
+        "seereersine": "yer",
+        "wolof": "naan"
+      }
+    },
+    {
+      "id": "bouche",
+      "gloss_fr": "bouche",
+      "forms": {
+        "balante": "bsúm",
+        "bandial": "butum",
+        "bayot": "olũm",
+        "fonyi": "butum",
+        "kassa": "butum",
+        "laalaa": "kúu",
+        "mancagne": "mntum",
+        "manjak": "ntum",
+        "ndut": "ɓúk",
+        "noon": "kúuɓ",
+        "pulaar": "hunuko",
+        "saafisaafi": "nguɓ",
+        "seereersine": "don",
+        "wolof": "gëmmiñ"
+      }
+    },
+    {
+      "id": "chanter",
+      "gloss_fr": "chanter",
+      "forms": {
+        "balante": "gribb",
+        "bandial": "éfoñ",
+        "bayot": "búsum",
+        "fonyi": "écim",
+        "kassa": "kakijen",
+        "laalaa": "kaƴeek",
+        "mancagne": "pyeeh",
+        "manjak": "uyee",
+        "ndut": "ƴeek",
+        "noon": "kiƴeek",
+        "pulaar": "yimde",
+        "saafisaafi": "ƴeek",
+        "seereersine": "gim",
+        "wolof": "woy"
+      }
+    },
+    {
+      "id": "charbon",
+      "gloss_fr": "charbon",
+      "forms": {
+        "balante": "gŧógjí",
+        "bandial": "fijeh",
+        "bayot": "ezio",
+        "fonyi": "bujek",
+        "kassa": "humeej",
+        "laalaa": "ëeñíin",
+        "mancagne": "ihil",
+        "manjak": "ijuas",
+        "ndut": "héeñí",
+        "noon": "ëeñíin",
+        "pulaar": "ƴulɓe",
+        "saafisaafi": "aañiind",
+        "seereersine": "kaagaañ",
+        "wolof": "këriñ"
+      }
+    },
+    {
+      "id": "chat",
+      "gloss_fr": "chat",
+      "forms": {
+        "balante": "daal",
+        "bandial": "essiho",
+        "bayot": "yasiḃo",
+        "fonyi": "ejangoon",
+        "kassa": "enaali",
+        "laalaa": "muus",
+        "mancagne": "udaalu",
+        "manjak": "undáali",
+        "ndut": "múus",
+        "noon": "muus",
+        "pulaar": "ullundu",
+        "saafisaafi": "herew",
+        "seereersine": "muus",
+        "wolof": "muus"
+      }
+    },
+    {
+      "id": "cheveux",
+      "gloss_fr": "cheveux",
+      "forms": {
+        "balante": "húul",
+        "bandial": "wal",
+        "bayot": "waa",
+        "fonyi": "wal",
+        "kassa": "wal",
+        "laalaa": "fen",
+        "mancagne": "wel",
+        "manjak": "uweel",
+        "ndut": "fen",
+        "noon": "fen",
+        "pulaar": "sukundu",
+        "saafisaafi": "find",
+        "seereersine": "wiil",
+        "wolof": "kawaar"
+      }
+    },
+    {
+      "id": "chevre",
+      "gloss_fr": "chevre",
+      "forms": {
+        "balante": "hara",
+        "bandial": "ejjamen",
+        "bayot": "eḃira",
+        "fonyi": "ejaamen",
+        "kassa": "ejaameen",
+        "laalaa": "peꞌ",
+        "mancagne": "upi",
+        "manjak": "upi",
+        "ndut": "peꞌ",
+        "noon": "peꞌ",
+        "pulaar": "mbeewa",
+        "saafisaafi": "peꞌ",
+        "seereersine": "fambe",
+        "wolof": "bëy"
+      }
+    },
+    {
+      "id": "cinq",
+      "gloss_fr": "cinq",
+      "forms": {
+        "balante": "gjiif",
+        "bandial": "futoh",
+        "bayot": "oţo",
+        "fonyi": "futok",
+        "kassa": "hutok",
+        "laalaa": "yëtus",
+        "mancagne": "kañeen",
+        "manjak": "kañan",
+        "ndut": "iip",
+        "noon": "yëtús",
+        "pulaar": "joꞌi",
+        "saafisaafi": "yatuus",
+        "seereersine": "ƥetik",
+        "wolof": "juróom"
+      }
+    },
+    {
+      "id": "collier",
+      "gloss_fr": "collier",
+      "forms": {
+        "balante": "btuufi",
+        "bandial": "banuh",
+        "bayot": "báno",
+        "fonyi": "bamaal",
+        "kassa": "basis",
+        "laalaa": "cah",
+        "mancagne": "pkitran",
+        "manjak": "pëgíir",
+        "ndut": "suumi",
+        "noon": "pemi",
+        "pulaar": "cakka",
+        "saafisaafi": "tokkaah",
+        "seereersine": "ceq",
+        "wolof": "caq"
+      }
+    },
+    {
+      "id": "corps",
+      "gloss_fr": "corps",
+      "forms": {
+        "balante": "liite",
+        "bandial": "ennil",
+        "bayot": "éñi",
+        "fonyi": "eniil",
+        "kassa": "eniil",
+        "laalaa": "faan",
+        "mancagne": "uleef",
+        "manjak": "uliaf",
+        "ndut": "faan",
+        "noon": "faan",
+        "pulaar": "ɓanndu",
+        "saafisaafi": "faan",
+        "seereersine": "cer",
+        "wolof": "yaram"
+      }
+    },
+    {
+      "id": "cou",
+      "gloss_fr": "cou",
+      "forms": {
+        "balante": "giladí",
+        "bandial": "ehondor",
+        "bayot": "ekondo",
+        "fonyi": "ekondoor",
+        "kassa": "ekondoꞌ",
+        "laalaa": "keebool",
+        "mancagne": "kaţuţ",
+        "manjak": "katuţ",
+        "ndut": "lúum",
+        "noon": "cenoon",
+        "pulaar": "daande",
+        "saafisaafi": "mbooh",
+        "seereersine": "cok",
+        "wolof": "loos"
+      }
+    },
+    {
+      "id": "couteau",
+      "gloss_fr": "couteau",
+      "forms": {
+        "balante": "mbanjí",
+        "bandial": "jiiba",
+        "bayot": "kámiro",
+        "fonyi": "eliba",
+        "kassa": "ébila",
+        "laalaa": "goat",
+        "mancagne": "umbañ",
+        "manjak": "umbanj",
+        "ndut": "gaaɗ",
+        "noon": "jípíl",
+        "pulaar": "laɓi",
+        "saafisaafi": "japil",
+        "seereersine": "japil",
+        "wolof": "paaka"
+      }
+    },
+    {
+      "id": "danse",
+      "gloss_fr": "danse",
+      "forms": {
+        "balante": "ñíre",
+        "bandial": "eboh",
+        "bayot": "ñamuo",
+        "fonyi": "jíboom",
+        "kassa": "jígom",
+        "laalaa": "ham",
+        "mancagne": "uki",
+        "manjak": "ukay",
+        "ndut": "am",
+        "noon": "ham",
+        "pulaar": "ngamri",
+        "saafisaafi": "mbec",
+        "seereersine": "mbec",
+        "wolof": "fecc"
+      }
+    },
+    {
+      "id": "dent",
+      "gloss_fr": "dent",
+      "forms": {
+        "balante": "fsij",
+        "bandial": "fíŋiŋ",
+        "bayot": "oŋiŋ",
+        "fonyi": "káñiiŋ",
+        "kassa": "káŋiiŋ",
+        "laalaa": "sís",
+        "mancagne": "pñiiŋ",
+        "manjak": "karumaj",
+        "ndut": "sís",
+        "noon": "sís",
+        "pulaar": "ñiire",
+        "saafisaafi": "sis",
+        "seereersine": "ñiiñ",
+        "wolof": "bëñ"
+      }
+    },
+    {
+      "id": "doigt",
+      "gloss_fr": "doigt",
+      "forms": {
+        "balante": "fmúmúd",
+        "bandial": "fissih",
+        "bayot": "éte",
+        "fonyi": "fusink",
+        "kassa": "husiik",
+        "laalaa": "jokon",
+        "mancagne": "pkoñ",
+        "manjak": "pëkonj",
+        "ndut": "kun",
+        "noon": "jokon",
+        "pulaar": "hoɗndu",
+        "saafisaafi": "ndukun",
+        "seereersine": "nqol",
+        "wolof": "baraam"
+      }
+    },
+    {
+      "id": "elephant",
+      "gloss_fr": "elephant",
+      "forms": {
+        "balante": "naaŋ",
+        "bandial": "éñih",
+        "bayot": "yasangalã",
+        "fonyi": "eñaab",
+        "kassa": "eñaab",
+        "laalaa": "coh",
+        "mancagne": "uloŋ",
+        "manjak": "uloong",
+        "ndut": "caaꞌ",
+        "noon": "cooh",
+        "pulaar": "ñiiwa",
+        "saafisaafi": "cooh",
+        "seereersine": "ñiig",
+        "wolof": "ñay"
+      }
+    },
+    {
+      "id": "femme",
+      "gloss_fr": "femme",
+      "forms": {
+        "balante": "anín",
+        "bandial": "anaare",
+        "bayot": "añaw",
+        "fonyi": "aseek",
+        "kassa": "anaale",
+        "laalaa": "ɓete",
+        "mancagne": "ñaaţ",
+        "manjak": "ŋáaţ",
+        "ndut": "ɓeleɓ",
+        "noon": "ɓeti",
+        "pulaar": "debbo",
+        "saafisaafi": "ɓitiɓ",
+        "seereersine": "tew",
+        "wolof": "jigéen"
+      }
+    },
+    {
+      "id": "feu",
+      "gloss_fr": "feu",
+      "forms": {
+        "balante": "gjoole",
+        "bandial": "sambun",
+        "bayot": "teno",
+        "fonyi": "sambun",
+        "kassa": "sambun",
+        "laalaa": "kiis",
+        "mancagne": "bdoo",
+        "manjak": "bërua",
+        "ndut": "kíi",
+        "noon": "kiwii",
+        "pulaar": "jeyngol",
+        "saafisaafi": "yongkaah",
+        "seereersine": "fiɗel",
+        "wolof": "safara"
+      }
+    },
+    {
+      "id": "foulard",
+      "gloss_fr": "foulard",
+      "forms": {
+        "balante": "gifaar",
+        "bandial": "éssor",
+        "bayot": "karese",
+        "fonyi": "fútiko",
+        "kassa": "kásooꞌ",
+        "laalaa": "meeteel",
+        "mancagne": "uleenŧ",
+        "manjak": "uleec",
+        "ndut": "músëer",
+        "noon": "mísooꞌ",
+        "pulaar": "misoor",
+        "saafisaafi": "meet",
+        "seereersine": "muxul",
+        "wolof": "musor"
+      }
+    },
+    {
+      "id": "front",
+      "gloss_fr": "front",
+      "forms": {
+        "balante": "fjúm",
+        "bandial": "fíriŋ",
+        "bayot": "oriŋo",
+        "fonyi": "fúriiŋ",
+        "kassa": "éjontum",
+        "laalaa": "púk",
+        "mancagne": "pjuk",
+        "manjak": "pëjuk",
+        "ndut": "púk",
+        "noon": "púk",
+        "pulaar": "tiinde",
+        "saafisaafi": "puk",
+        "seereersine": "tagid",
+        "wolof": "jë"
+      }
+    },
+    {
+      "id": "fumee",
+      "gloss_fr": "fumee",
+      "forms": {
+        "balante": "mtúnda",
+        "bandial": "fakkor",
+        "bayot": "hono",
+        "fonyi": "fakoor",
+        "kassa": "hakooꞌ",
+        "laalaa": "iifil",
+        "mancagne": "udu",
+        "manjak": "udú",
+        "ndut": "ɗúukëe",
+        "noon": "iifil",
+        "pulaar": "cuurki",
+        "saafisaafi": "ɗuuku",
+        "seereersine": "suun",
+        "wolof": "saaxar"
+      }
+    },
+    {
+      "id": "genou",
+      "gloss_fr": "genou",
+      "forms": {
+        "balante": "fjúgúm",
+        "bandial": "fújjul",
+        "bayot": "kaźũ",
+        "fonyi": "fújul",
+        "kassa": "hújuul",
+        "laalaa": "ɗii",
+        "mancagne": "pjuhël",
+        "manjak": "pëjúul",
+        "ndut": "ɗíh",
+        "noon": "ƴíꞌ",
+        "pulaar": "hofuru",
+        "saafisaafi": "ƴii",
+        "seereersine": "nguɓay",
+        "wolof": "óom"
+      }
+    },
+    {
+      "id": "herbes",
+      "gloss_fr": "herbes",
+      "forms": {
+        "balante": "rúutí",
+        "bandial": "mafos",
+        "bayot": "kufep",
+        "fonyi": "étuura",
+        "kassa": "mahos",
+        "laalaa": "paagii",
+        "mancagne": "ujaagal",
+        "manjak": "pëtaţ",
+        "ndut": "gaawa",
+        "noon": "pëegíi",
+        "pulaar": "huɗo",
+        "saafisaafi": "paangi",
+        "seereersine": "daaƭ",
+        "wolof": "ñax"
+      }
+    },
+    {
+      "id": "hibou",
+      "gloss_fr": "hibou",
+      "forms": {
+        "balante": "ngúwangúg",
+        "bandial": "éhololol",
+        "bayot": "yákololo",
+        "fonyi": "ékololoŋ",
+        "kassa": "ékololoŋ",
+        "laalaa": "cëeruꞌ",
+        "mancagne": "upëpër",
+        "manjak": "upëpër",
+        "ndut": "díiŋ",
+        "noon": "díiŋ",
+        "pulaar": "puppuɓal",
+        "saafisaafi": "ndiing",
+        "seereersine": "loy",
+        "wolof": "looy"
+      }
+    },
+    {
+      "id": "homme",
+      "gloss_fr": "homme",
+      "forms": {
+        "balante": "alante",
+        "bandial": "ánaine",
+        "bayot": "iliŋ",
+        "fonyi": "ániine",
+        "kassa": "ánayine",
+        "laalaa": "ɓoꞌ",
+        "mancagne": "ñiinţ",
+        "manjak": "níinţ",
+        "ndut": "ƴaal",
+        "noon": "ƴaal",
+        "pulaar": "gorko",
+        "saafisaafi": "ƴaar",
+        "seereersine": "koor",
+        "wolof": "góor"
+      }
+    },
+    {
+      "id": "hyene",
+      "gloss_fr": "hyene",
+      "forms": {
+        "balante": "ŋoon",
+        "bandial": "émunduŋo",
+        "bayot": "yamunduŋ",
+        "fonyi": "émunduŋo",
+        "kassa": "émunduŋo",
+        "laalaa": "gumuu",
+        "mancagne": "uñiiŋ",
+        "manjak": "uŋíl",
+        "ndut": "gúmú",
+        "noon": "gumuu",
+        "pulaar": "fowru",
+        "saafisaafi": "ngumu",
+        "seereersine": "moon",
+        "wolof": "bukki"
+      }
+    },
+    {
+      "id": "langue",
+      "gloss_fr": "langue",
+      "forms": {
+        "balante": "gidemet",
+        "bandial": "fírerum",
+        "bayot": "oviya",
+        "fonyi": "fúrerep",
+        "kassa": "húleeluf",
+        "laalaa": "piriim",
+        "mancagne": "pndemënt",
+        "manjak": "pëndemënt",
+        "ndut": "pereem",
+        "noon": "perem",
+        "pulaar": "ɗemngal",
+        "saafisaafi": "peɗeem",
+        "seereersine": "ɗelem",
+        "wolof": "lammiñ"
+      }
+    },
+    {
+      "id": "lion",
+      "gloss_fr": "lion",
+      "forms": {
+        "balante": "jatoo",
+        "bandial": "éŋaŋ",
+        "bayot": "samuko",
+        "fonyi": "ejata",
+        "kassa": "égaŋ",
+        "laalaa": "gaynde",
+        "mancagne": "ulihu",
+        "manjak": "ulíwar",
+        "ndut": "gaynde",
+        "noon": "gayndi",
+        "pulaar": "mbaroodi",
+        "saafisaafi": "muuma",
+        "seereersine": "njogoy",
+        "wolof": "gaynde"
+      }
+    },
+    {
+      "id": "lune",
+      "gloss_fr": "lune",
+      "forms": {
+        "balante": "bdinde",
+        "bandial": "fieñ",
+        "bayot": "yaḷeŋ",
+        "fonyi": "fuleeŋ",
+        "kassa": "hul̥eeñ",
+        "laalaa": "ñiin",
+        "mancagne": "pli",
+        "manjak": "pëli",
+        "ndut": "céyín",
+        "noon": "ñiin",
+        "pulaar": "lewru",
+        "saafisaafi": "caɓin",
+        "seereersine": "nqool",
+        "wolof": "wéer"
+      }
+    },
+    {
+      "id": "lutter",
+      "gloss_fr": "lutter",
+      "forms": {
+        "balante": "ngdaantí",
+        "bandial": "jákuj",
+        "bayot": "kaṗam",
+        "fonyi": "kayeg",
+        "kassa": "kákuuj",
+        "laalaa": "bëre",
+        "mancagne": "ppëtar",
+        "manjak": "kanpëtar",
+        "ndut": "bërëꞌ",
+        "noon": "kilebiroh",
+        "pulaar": "sippirde",
+        "saafisaafi": "leber",
+        "seereersine": "maafir",
+        "wolof": "bëre"
+      }
+    },
+    {
+      "id": "maison",
+      "gloss_fr": "maison",
+      "forms": {
+        "balante": "ɓaale",
+        "bandial": "yaŋ",
+        "bayot": "édoṗ",
+        "fonyi": "eluup",
+        "kassa": "eluuf",
+        "laalaa": "kaan",
+        "mancagne": "umbeman",
+        "manjak": "untab",
+        "ndut": "faam",
+        "noon": "kaan",
+        "pulaar": "galle",
+        "saafisaafi": "kahan",
+        "seereersine": "mbind",
+        "wolof": "kër"
+      }
+    },
+    {
+      "id": "marmite",
+      "gloss_fr": "marmite",
+      "forms": {
+        "balante": "fntuudi",
+        "bandial": "gariloŋ",
+        "bayot": "kariroŋ",
+        "fonyi": "kalereŋ",
+        "kassa": "kaleloon",
+        "laalaa": "kóodéeꞌ",
+        "mancagne": "kaliiruŋ",
+        "manjak": "kalirong",
+        "ndut": "kuluŋ",
+        "noon": "këedíiꞌ",
+        "pulaar": "fayannde",
+        "saafisaafi": "soƴe",
+        "seereersine": "kaleera",
+        "wolof": "cin"
+      }
+    },
+    {
+      "id": "moi",
+      "gloss_fr": "moi",
+      "forms": {
+        "balante": "ñí",
+        "bandial": "ínje",
+        "bayot": "inje",
+        "fonyi": "ínje",
+        "kassa": "ínje",
+        "laalaa": "me",
+        "mancagne": "nji",
+        "manjak": "njí",
+        "ndut": "soꞌ",
+        "noon": "mi",
+        "pulaar": "miin",
+        "saafisaafi": "mi",
+        "seereersine": "mi",
+        "wolof": "man"
+      }
+    },
+    {
+      "id": "monter",
+      "gloss_fr": "monter",
+      "forms": {
+        "balante": "bjinji",
+        "bandial": "bijiŋ",
+        "bayot": "buhilo",
+        "fonyi": "kañito",
+        "kassa": "buŋito",
+        "laalaa": "lap",
+        "mancagne": "ppaya",
+        "manjak": "pëpaya",
+        "ndut": "lap",
+        "noon": "kilap",
+        "pulaar": "ƴeeŋde",
+        "saafisaafi": "rap",
+        "seereersine": "ŋaay",
+        "wolof": "yéeg"
+      }
+    },
+    {
+      "id": "mouche",
+      "gloss_fr": "mouche",
+      "forms": {
+        "balante": "asala",
+        "bandial": "éwu",
+        "bayot": "dodoṗo",
+        "fonyi": "yáwu",
+        "kassa": "éwuu",
+        "laalaa": "cëefu",
+        "mancagne": "uwu",
+        "manjak": "uwu",
+        "ndut": "cëef",
+        "noon": "cëwúu",
+        "pulaar": "mbuubu",
+        "saafisaafi": "caafu",
+        "seereersine": "buƈ",
+        "wolof": "weñ"
+      }
+    },
+    {
+      "id": "nez",
+      "gloss_fr": "nez",
+      "forms": {
+        "balante": "gifúŋa",
+        "bandial": "éñundu",
+        "bayot": "eźũ",
+        "fonyi": "éñundu",
+        "kassa": "éŋendu",
+        "laalaa": "kumun",
+        "mancagne": "byiş",
+        "manjak": "bëyíis",
+        "ndut": "ñíin",
+        "noon": "kumuun",
+        "pulaar": "hinere",
+        "saafisaafi": "kiñiin",
+        "seereersine": "ñis",
+        "wolof": "bakkan"
+      }
+    },
+    {
+      "id": "oeil",
+      "gloss_fr": "oeil",
+      "forms": {
+        "balante": "fgít",
+        "bandial": "jíĉil",
+        "bayot": "kásio",
+        "fonyi": "jícil",
+        "kassa": "jíkil",
+        "laalaa": "koas",
+        "mancagne": "pkëş",
+        "manjak": "pëkës",
+        "ndut": "íl",
+        "noon": "kuhas",
+        "pulaar": "yitere",
+        "saafisaafi": "has",
+        "seereersine": "ngid",
+        "wolof": "bët"
+      }
+    },
+    {
+      "id": "os",
+      "gloss_fr": "os",
+      "forms": {
+        "balante": "fuul",
+        "bandial": "evvul",
+        "bayot": "ku",
+        "fonyi": "kool",
+        "kassa": "ewuul",
+        "laalaa": "ƴoh",
+        "mancagne": "kamoh",
+        "manjak": "kamoo",
+        "ndut": "ƴuh",
+        "noon": "ƴoh",
+        "pulaar": "ƴiyal",
+        "saafisaafi": "ƴoh",
+        "seereersine": "hiiƈ",
+        "wolof": "yax"
+      }
+    },
+    {
+      "id": "pain",
+      "gloss_fr": "pain",
+      "forms": {
+        "balante": "fmbúur",
+        "bandial": "gámburu",
+        "bayot": "kamburie",
+        "fonyi": "mbúru",
+        "kassa": "húmbuulu",
+        "laalaa": "mbúuru",
+        "mancagne": "kapoom",
+        "manjak": "pëpoom",
+        "ndut": "mbúurú",
+        "noon": "mbúurú",
+        "pulaar": "mburu",
+        "saafisaafi": "pooŋaay",
+        "seereersine": "mbuuru",
+        "wolof": "mburu"
+      }
+    },
+    {
+      "id": "pere",
+      "gloss_fr": "pere",
+      "forms": {
+        "balante": "faafa",
+        "bandial": "ᵽaya",
+        "bayot": "piaṗ",
+        "fonyi": "ampaam",
+        "kassa": "atuuba",
+        "laalaa": "baamon",
+        "mancagne": "aşin",
+        "manjak": "asiin",
+        "ndut": "baap",
+        "noon": "paamun",
+        "pulaar": "baaba",
+        "saafisaafi": "baab",
+        "seereersine": "faap",
+        "wolof": "baay"
+      }
+    },
+    {
+      "id": "piment",
+      "gloss_fr": "piment",
+      "forms": {
+        "balante": "ginŧeel",
+        "bandial": "bábbaba",
+        "bayot": "baḷio",
+        "fonyi": "kaceesa",
+        "kassa": "kamelenken",
+        "laalaa": "këeni",
+        "mancagne": "kadohi",
+        "manjak": "iruu",
+        "ndut": "kéení",
+        "noon": "këení",
+        "pulaar": "kaani",
+        "saafisaafi": "malgate",
+        "seereersine": "tuɓur",
+        "wolof": "kaani"
+      }
+    },
+    {
+      "id": "pleurer",
+      "gloss_fr": "pleurer",
+      "forms": {
+        "balante": "giriij",
+        "bandial": "ukoŋ",
+        "bayot": "evũ",
+        "fonyi": "búŋan",
+        "kassa": "jíl̥ok",
+        "laalaa": "kon",
+        "mancagne": "pwooni",
+        "manjak": "iduug",
+        "ndut": "looy",
+        "noon": "kikoduk",
+        "pulaar": "woyde",
+        "saafisaafi": "fuɗ",
+        "seereersine": "lool",
+        "wolof": "jooy"
+      }
+    },
+    {
+      "id": "plumes",
+      "gloss_fr": "plumes",
+      "forms": {
+        "balante": "ɓúur",
+        "bandial": "úsit",
+        "bayot": "kuhĩs",
+        "fonyi": "úsit",
+        "kassa": "úsint",
+        "laalaa": "múul",
+        "mancagne": "iluŋ",
+        "manjak": "ilung",
+        "ndut": "laam",
+        "noon": "fënëf",
+        "pulaar": "sigeeji",
+        "saafisaafi": "nokor",
+        "seereersine": "nafir",
+        "wolof": "dunk"
+      }
+    },
+    {
+      "id": "poitrine",
+      "gloss_fr": "poitrine",
+      "forms": {
+        "balante": "fsanj",
+        "bandial": "bagiŋ",
+        "bayot": "báhu",
+        "fonyi": "búsus",
+        "kassa": "bagiŋ",
+        "laalaa": "dën",
+        "mancagne": "bjënŧ",
+        "manjak": "bëjíinc",
+        "ndut": "araal",
+        "noon": "fasaa",
+        "pulaar": "ɓernde",
+        "saafisaafi": "fisa",
+        "seereersine": "ngang",
+        "wolof": "dënn"
+      }
+    },
+    {
+      "id": "puits",
+      "gloss_fr": "puits",
+      "forms": {
+        "balante": "gihaje",
+        "bandial": "éhaᵽa",
+        "bayot": "éŗo",
+        "fonyi": "ekoloŋ",
+        "kassa": "ekoloŋ",
+        "laalaa": "naa",
+        "mancagne": "pliik",
+        "manjak": "pëlik",
+        "ndut": "yéem",
+        "noon": "neꞌ",
+        "pulaar": "woyndu",
+        "saafisaafi": "naac",
+        "seereersine": "ngas",
+        "wolof": "teen"
+      }
+    },
+    {
+      "id": "quatre",
+      "gloss_fr": "quatre",
+      "forms": {
+        "balante": "gtahla",
+        "bandial": "sibbagir",
+        "bayot": "iḃei",
+        "fonyi": "sibaaciir",
+        "kassa": "sibakii",
+        "laalaa": "niikis",
+        "mancagne": "baakër",
+        "manjak": "këbaakër",
+        "ndut": "iniil",
+        "noon": "nikiis",
+        "pulaar": "nayi",
+        "saafisaafi": "nikiis",
+        "seereersine": "nahik",
+        "wolof": "ñeent"
+      }
+    },
+    {
+      "id": "question",
+      "gloss_fr": "question",
+      "forms": {
+        "balante": "fɓande",
+        "bandial": "eroren",
+        "bayot": "kuzia",
+        "fonyi": "eceeŋ",
+        "kassa": "balonk",
+        "laalaa": "miikis",
+        "mancagne": "kahepar",
+        "manjak": "yepar",
+        "ndut": "meelaꞌ",
+        "noon": "meekis",
+        "pulaar": "naamndal",
+        "saafisaafi": "meeksoh",
+        "seereersine": "laamit",
+        "wolof": "laaj"
+      }
+    },
+    {
+      "id": "rat",
+      "gloss_fr": "rat",
+      "forms": {
+        "balante": "núndí",
+        "bandial": "écoᵽ",
+        "bayot": "yakulẽŋ",
+        "fonyi": "fúkundoon",
+        "kassa": "húkundoon",
+        "laalaa": "boroh",
+        "mancagne": "uyaaţ",
+        "manjak": "uyáaţ",
+        "ndut": "paake",
+        "noon": "kañi",
+        "pulaar": "doomburu",
+        "saafisaafi": "cingaañ",
+        "seereersine": "pom",
+        "wolof": "kaña"
+      }
+    },
+    {
+      "id": "riz",
+      "gloss_fr": "riz",
+      "forms": {
+        "balante": "maalu",
+        "bandial": "sinaŋ",
+        "bayot": "bajee",
+        "fonyi": "emaana",
+        "kassa": "sinaaŋ",
+        "laalaa": "wakcaden",
+        "mancagne": "umaanan",
+        "manjak": "umáani",
+        "ndut": "maalaw",
+        "noon": "maalu",
+        "pulaar": "maaro",
+        "saafisaafi": "maalo",
+        "seereersine": "maalo",
+        "wolof": "ceeb"
+      }
+    },
+    {
+      "id": "sauter",
+      "gloss_fr": "sauter",
+      "forms": {
+        "balante": "gyíŧ",
+        "bandial": "éñag",
+        "bayot": "yáduo",
+        "fonyi": "étaas",
+        "kassa": "jifum",
+        "laalaa": "kafojok",
+        "mancagne": "plut",
+        "manjak": "pëlut",
+        "ndut": "fool",
+        "noon": "kifóolɗuk",
+        "pulaar": "diwde",
+        "saafisaafi": "gong",
+        "seereersine": "fool",
+        "wolof": "tëb"
+      }
+    },
+    {
+      "id": "savon",
+      "gloss_fr": "savon",
+      "forms": {
+        "balante": "ŧafñe",
+        "bandial": "éᵽosum",
+        "bayot": "esaṗina",
+        "fonyi": "ésaafina",
+        "kassa": "esaabu",
+        "laalaa": "saafo",
+        "mancagne": "pmbën",
+        "manjak": "pënij",
+        "ndut": "sëefú",
+        "noon": "saafu",
+        "pulaar": "saabunnde",
+        "saafisaafi": "saafu",
+        "seereersine": "saafu",
+        "wolof": "saabu"
+      }
+    },
+    {
+      "id": "serpent",
+      "gloss_fr": "serpent",
+      "forms": {
+        "balante": "jídemba",
+        "bandial": "eella",
+        "bayot": "mulu",
+        "fonyi": "eyela",
+        "kassa": "enuukayila",
+        "laalaa": "goŋ",
+        "mancagne": "upula",
+        "manjak": "ukopëţaţ",
+        "ndut": "goŋ",
+        "noon": "goŋ",
+        "pulaar": "baajol",
+        "saafisaafi": "iiñ",
+        "seereersine": "fangool",
+        "wolof": "jaan"
+      }
+    },
+    {
+      "id": "soleil",
+      "gloss_fr": "soleil",
+      "forms": {
+        "balante": "léey",
+        "bandial": "bunaa",
+        "bayot": "tã",
+        "fonyi": "balaab",
+        "kassa": "banak",
+        "laalaa": "noh",
+        "mancagne": "bnuur",
+        "manjak": "unu",
+        "ndut": "naꞌ",
+        "noon": "noh",
+        "pulaar": "naange",
+        "saafisaafi": "noh",
+        "seereersine": "njeeƈ",
+        "wolof": "jant"
+      }
+    },
+    {
+      "id": "tortue",
+      "gloss_fr": "tortue",
+      "forms": {
+        "balante": "ngubur",
+        "bandial": "etuhun",
+        "bayot": "umo",
+        "fonyi": "efoha",
+        "kassa": "ékokkob",
+        "laalaa": "hoom",
+        "mancagne": "ufonţ",
+        "manjak": "ufanţ",
+        "ndut": "mbonaat",
+        "noon": "dígal",
+        "pulaar": "heende",
+        "saafisaafi": "hom",
+        "seereersine": "xomb",
+        "wolof": "mboonaat"
+      }
+    }
+  ]
+}
