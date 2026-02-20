@@ -1,34 +1,108 @@
+/* ===========================
+   Global Styles
+   =========================== */
 body {
-  font-family: Arial, sans-serif;
-  text-align: center;
-  margin: 20px;
+    font-family: Arial, sans-serif;
+    font-size: 18px;         /* readable on mobile */
+    padding: 10px;
+    margin: 0;
+    background-color: #fdfdfd;
+    text-align: center;
 }
 
-.answer-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 150px);
-  gap: 10px;
-  justify-content: center;
-  margin-top: 20px;
+/* Headings */
+h1, h2, h3 {
+    margin: 10px 0;
 }
 
+/* ===========================
+   Buttons (language & word buttons)
+   =========================== */
 button {
-  padding: 10px;
-  font-size: 16px;
+    font-size: 18px;        /* bigger text for mobile */
+    padding: 12px;
+    margin: 4px;
+    border-radius: 8px;
+    cursor: pointer;
+    border: 1px solid #333;
+    background-color: #fff;
+    transition: background-color 0.2s, transform 0.1s;
 }
 
+button:hover {
+    background-color: #e0e0e0;
+    transform: scale(1.05);
+}
+
+/* Language buttons grid */
+#language-buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    max-width: 400px;
+    margin: 0 auto 20px auto;
+}
+
+/* Word buttons grid */
+button-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    max-width: 400px;
+    margin: 0 auto 20px auto;
+}
+
+/* ===========================
+   Images
+   =========================== */
+img {
+    max-width: 200px;
+    height: auto;
+    margin: 10px 0;
+}
+
+/* ===========================
+   Popups
+   =========================== */
 #popup {
-  position: fixed;
-  top:0; left:0; right:0; bottom:0;
-  background: rgba(0,0,0,0.5);
-  display: flex;
-  justify-content:center;
-  align-items:center;
+    display: none;
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 20px;
+    border: 5px solid;       /* green/red set dynamically */
+    background-color: #fff;
+    z-index: 1000;
+    text-align: center;
 }
 
-#popup-content {
-  background: white;
-  padding: 20px;
-  border: 5px solid green;
+/* ===========================
+   Final screen
+   =========================== */
+#final-screen {
+    margin-top: 20px;
 }
-#popup.incorrect #popup-content { border-color: red; }
+
+/* ===========================
+   Responsive adjustments
+   =========================== */
+@media (max-width: 600px) {
+    body {
+        font-size: 20px;
+        padding: 12px;
+    }
+
+    button {
+        font-size: 20px;
+        padding: 14px;
+    }
+
+    #language-buttons, button-container {
+        max-width: 100%;
+    }
+
+    img {
+        max-width: 100%;
+    }
+}
