@@ -23,6 +23,14 @@ function shuffleArray(arr){
   return arr.map(a=>[Math.random(),a]).sort((a,b)=>a[0]-b[0]).map(a=>a[1]);
 }
 
+function displayLanguageName(lang) {
+    switch(lang.toLowerCase()) {
+        case 'seereersine': return 'Seereer Sine';
+        case 'saafisaafi': return 'Saafi-Saafi';
+        default: return capitalize(lang);
+    }
+}
+
 // ------------------------
 // Load JSON
 fetch("data/words.json")
@@ -37,24 +45,24 @@ fetch("data/words.json")
 // Main menu
 function initMainMenu(){
   document.body.innerHTML = `
-    <h1>Choisissez une langue (v13)</h1>
+    <h1>Choisissez une langue (v14)</h1>
     <div id="language-buttons">
-      ${LANGUAGES.map(lang => `<button onclick="selectLanguage('${lang}')">${capitalize(lang)}</button>`).join('')}
+      ${LANGUAGES.map(lang => `<button onclick="selectLanguage('${lang}')">${displayLanguageName(selectedLanguage)}</button>`).join('')}
     </div>
   `;
 }
 
-// Capitalize first letter
-function capitalize(str){
-  return str.charAt(0).toUpperCase() + str.slice(1);
-}
+<div id="language-buttons">
+  ${LANGUAGES.map(lang => `<button onclick="selectLanguage('${lang}')">${displayLanguageName(lang)}</button>`).join('')}
+</div>
+
 
 // ------------------------
 // Language selection
 function selectLanguage(lang){
   selectedLanguage = lang;
   document.body.innerHTML = `
-    <h2>Trouvez 20 mots en ${capitalize(selectedLanguage)}</h2>
+    <h2>Trouvez 20 mots en ${displayLanguageName(selectedLanguage)}</h2>
     <button onclick="startGame()">Aller</button>
   `;
 }
@@ -77,17 +85,17 @@ thudSound.play = function() {
     const g = ctx.createGain();
 
     o.type = 'sine';
-    o.frequency.value = 250;                   // still low but more audible
+    o.frequency.value = 300;             // audible low tone
 
-    // Start very loud and quick attack
-    g.gain.setValueAtTime(1.0, ctx.currentTime);    // max gain
-    g.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.35); // fade out
+    // Full volume, punchy attack
+    g.gain.setValueAtTime(2.0, ctx.currentTime);  // very loud
+    g.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.35);
 
     o.connect(g);
     g.connect(ctx.destination);
 
     o.start();
-    o.stop(ctx.currentTime + 0.35);           // slightly shorter but punchy
+    o.stop(ctx.currentTime + 0.35);
 };
 
 }
@@ -120,11 +128,12 @@ function loadQuestion() {
 
   // Build buttons HTML
   const buttonsHtml = options.map(opt => {
-    const encodedWord = encodeURIComponent(opt.word);
-    return `<button onclick="checkAnswer('${opt.lang}', decodeURIComponent('${encodedWord}'))">
-              ${opt.word}
-            </button>`;
-  }).join('');
+  const encodedWord = encodeURIComponent(opt.word);
+  return `<button onclick="checkAnswer('${opt.lang}', decodeURIComponent('${encodedWord}'))">
+            ${opt.word}  <!-- we keep the word itself here, not language name -->
+          </button>`;
+}).join('');
+
 
   // ----------------------
   // Render question
