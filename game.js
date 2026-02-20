@@ -53,7 +53,7 @@ fetch("data/words.json")
 // Main menu
 function initMainMenu(){
   document.body.innerHTML = `
-    <h1>Choisissez une langue (v15)</h1>
+    <h1>Choisissez une langue (v16)</h1>
     <div id="language-buttons">
       ${LANGUAGES.map(lang => `<button onclick="selectLanguage('${lang}')">${displayLanguageName(lang)}</button>`).join('')}
     </div>
@@ -227,14 +227,25 @@ function showFinalScreen(){
   document.body.innerHTML = `
     <h1>Félicitations !</h1>
     <p>Vous avez terminé le quiz.</p>
-    <p>Score : ${correctFirstTry} / 20</p>
-    <p style="font-size:0.8em; color:#555;">
+
+    <div style="margin: 30px 0;">
+      <span style="font-size: 4.5em; font-weight: bold; line-height: 1;">
+        ${correctFirstTry}
+      </span>
+      <span style="font-size: 1.8em; color: #555;">
+        / 20
+      </span>
+    </div>
+
+    <p style="font-size: 1.1em; color:#444; margin-top:20px;">
       Seules les réponses correctes dès le premier essai ont été comptées.
     </p>
+
     <button onclick="initMainMenu()">Retour au menu</button>
     <button onclick="startGameAgain()">Rejouer</button>
   `;
 }
+
 
 function startGameAgain() {
   correctFirstTry = 0;
