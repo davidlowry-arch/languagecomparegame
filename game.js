@@ -86,56 +86,80 @@ function startGame(){
 // Load question
 function loadQuestion(){
   const q = questions[currentQuestionIndex];
-  const buttonsHtml = LANGUAGES.map(lang => {
-    const word = q.forms[lang];
-    return `<button onclick="checkAnswer('${lang}', '${word}')">${word}</button>`;
-  }).join('');
+
+  // Build array of options for this question
+  const options = LANGUAGES.map(lang => ({
+    lang: lang,
+    word: q.forms[lang]
+  }));
+
+  // Sort alphabetically by the displayed word
+  options.sort((a, b) => 
+    a.word.localeCompare(b.word, 'fr', { sensitivity: 'base' })
+  );
+
+  const buttonsHtml = options.map(opt => 
+    `<button onclick="checkAnswer('${opt.lang}', '${opt.word}')">
+       ${opt.word}
+     </button>`
+  ).join('');
 
   document.body.innerHTML = `
     <h2>${q.gloss_fr}</h2>
-    <img src="images/${q.id}.png" style="max-width:200px"><br><br>
-    <div style="display:grid; grid-template-columns: repeat(2, 1fr); gap:10px">
+    <img src="images/${q.id}.png"><br><br>
+    <div class="button-container">
       ${buttonsHtml}
     </div>
-    <div id="popup" style="display:none; position:fixed; top:20%; left:50%; transform:translateX(-50%);
-         padding:20px; border:5px solid; background:white; z-index:1000;"></div>
+    <div id="popup"></div>
   `;
 }
+
 
 // ------------------------
 // Check answer
 function checkAnswer(langClicked, wordClicked){
   const q = questions[currentQuestionIndex];
   const correctWord = q.forms[selectedLanguage];
-
   const popup = document.getElementById("popup");
-  let correct = (langClicked === selectedLanguage);
+
+  const correct = (langClicked === selectedLanguage);
+
+  const audioPath = `audio/${selectedLanguage}/${q.id}.mp3`;
 
   if(correct){
-    const audio = new Audio(`audio/${selectedLanguage}/${q.id}.mp3`);
+    const audio = new Audio(audioPath);
     audio.play();
-    // Ding sound if you have it
-    const ding = new Audio("sounds/ding.mp3");
-    ding.play();
+
     popup.style.borderColor = "green";
     popup.innerHTML = `
       <h3>${capitalize(selectedLanguage)}</h3>
       <p>${correctWord}</p>
-      <img src="images/${q.id}.png" style="max-width:200px"><br>
+      <img src="images/${q.id}.png">
       <button onclick="nextQuestion()">Prochaine question</button>
     `;
   } else {
+    // Play dull thud first
     thudSound.play();
+
+    // Then play correct audio after short delay
+    setTimeout(() => {
+      const audio = new Audio(audioPath);
+      audio.play();
+    }, 400);
+
     popup.style.borderColor = "red";
     popup.innerHTML = `
       <h3>Incorrect</h3>
-      <p>${wordClicked}</p>
-      <img src="images/${q.id}.png" style="max-width:200px"><br>
-      <button onclick="closePopup()">Essayer encore</button>
+      <p><strong>${capitalize(selectedLanguage)}</strong></p>
+      <p>${correctWord}</p>
+      <img src="images/${q.id}.png">
+      <button onclick="closePopup()">Continuer</button>
     `;
   }
+
   popup.style.display = "block";
 }
+
 
 // ------------------------
 // Close incorrect popup
@@ -164,3 +188,10 @@ function showFinalScreen(){
     <button onclick="initMainMenu()">Retour au menu</button>
   `;
 }
+
+window.addEventListener("beforeunload", function (e) {
+  if (currentQuestionIndex > 0 && currentQuestionIndex < questions.length) {
+    e.preventDefault();
+    e.returnValue = '';
+  }
+});
