@@ -35,7 +35,7 @@ fetch("data/words.json")
 // Main menu
 function initMainMenu(){
   document.body.innerHTML = `
-    <h1>Choisissez une langue (v2)</h1>
+    <h1>Choisissez une langue (v3)</h1>
     <div id="language-buttons">
       ${LANGUAGES.map(lang => `<button onclick="selectLanguage('${lang}')">${capitalize(lang)}</button>`).join('')}
     </div>
@@ -98,11 +98,13 @@ function loadQuestion(){
     a.word.localeCompare(b.word, 'fr', { sensitivity: 'base' })
   );
 
-  const buttonsHtml = options.map(opt => 
-    `<button onclick="checkAnswer('${opt.lang}', '${opt.word}')">
-       ${opt.word}
-     </button>`
-  ).join('');
+  const buttonsHtml = options.map(opt => {
+    const encodedWord = encodeURIComponent(opt.word);
+    return `<button onclick="checkAnswer('${opt.lang}', decodeURIComponent('${encodedWord}'))">
+               ${opt.word}
+            </button>`;
+}).join('');
+
 
   document.body.innerHTML = `
     <h2>${q.gloss_fr}</h2>
