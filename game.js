@@ -37,7 +37,7 @@ fetch("data/words.json")
 // Main menu
 function initMainMenu(){
   document.body.innerHTML = `
-    <h1>Choisissez une langue (v10)</h1>
+    <h1>Choisissez une langue (v11)</h1>
     <div id="language-buttons">
       ${LANGUAGES.map(lang => `<button onclick="selectLanguage('${lang}')">${capitalize(lang)}</button>`).join('')}
     </div>
@@ -69,20 +69,25 @@ function startGame(){
 
   // Preload thud sound
   thudSound = new Audio();
-  const AudioContext = window.AudioContext || window.webkitAudioContext;
-  const ctx = new AudioContext();
-  thudSound.play = function(){
+const AudioContext = window.AudioContext || window.webkitAudioContext;
+const ctx = new AudioContext();
+
+thudSound.play = function(){
     const o = ctx.createOscillator();
     const g = ctx.createGain();
+
     o.type = 'sine';
-    o.frequency.value = 60; // low dull
-    g.gain.setValueAtTime(0.5, ctx.currentTime);
-    g.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.3);
+    o.frequency.value = 150;           // higher frequency for audibility
+
+    g.gain.setValueAtTime(0.5, ctx.currentTime);  // start louder
+    g.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.5); // decay over 0.5s
+
     o.connect(g);
     g.connect(ctx.destination);
+
     o.start();
-    o.stop(ctx.currentTime + 0.3);
-  };
+    o.stop(ctx.currentTime + 0.5);     // longer duration
+};
 }
 
 // ------------------------
