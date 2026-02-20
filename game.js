@@ -52,7 +52,7 @@ fetch("data/words.json")
 // Main menu
 function initMainMenu(){
   document.body.innerHTML = `
-    <h1>Choisissez une langue (v15)</h1>
+    <h1>Choisissez une langue (v16)</h1>
     <div id="language-buttons">
       ${LANGUAGES.map(lang => `<button onclick="selectLanguage('${lang}')">${displayLanguageName(lang)}</button>`).join('')}
     </div>
@@ -78,27 +78,35 @@ function startGame(){
   loadQuestion();
 
   // Preload thud sound (loud beep)
-  thudSound = new Audio();
-  const AudioContext = window.AudioContext || window.webkitAudioContext;
-  const ctx = new AudioContext();
-
   thudSound.play = function() {
-      const o = ctx.createOscillator();
-      const g = ctx.createGain();
+    const o1 = ctx.createOscillator();
+    const o2 = ctx.createOscillator();
+    const g = ctx.createGain();
 
-      o.type = 'sine';
-      o.frequency.value = 300;             // low tone, audible
+    // Low sine for body
+    o1.type = 'sine';
+    o1.frequency.value = 350;
 
-      // Very loud, punchy
-      g.gain.setValueAtTime(2.0, ctx.currentTime);
-      g.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.35);
+    // High sine for punch
+    o2.type = 'sine';
+    o2.frequency.value = 900;
 
-      o.connect(g);
-      g.connect(ctx.destination);
+    // Gain envelope
+    g.gain.setValueAtTime(0.0, ctx.currentTime);
+    g.gain.linearRampToValueAtTime(10.0, ctx.currentTime + 0.02); // very loud attack
+    g.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.25); // fast decay
 
-      o.start();
-      o.stop(ctx.currentTime + 0.35);
-  };
+    // Connect
+    o1.connect(g);
+    o2.connect(g);
+    g.connect(ctx.destination);
+
+    // Start/stop
+    o1.start();
+    o2.start();
+    o1.stop(ctx.currentTime + 0.25);
+    o2.stop(ctx.currentTime + 0.25);
+};
 }
 
 // ------------------------
