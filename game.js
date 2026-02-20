@@ -117,49 +117,59 @@ function loadQuestion(){
 
 // ------------------------
 function checkAnswer(langClicked, wordClicked){
+
   const q = questions[currentQuestionIndex];
-  const correctWord = q.forms[selectedLanguage];
+  const correctLang = selectedLanguage;
+  const correctWord = q.forms[correctLang];
+
   const popup = document.getElementById("popup");
 
-  const correct = (langClicked === selectedLanguage);
-
-  const audioPath = `audio/${selectedLanguage}/${q.id}.mp3`;
+  const correct = (langClicked === correctLang);
 
   if(correct){
-    const audio = new Audio(audioPath);
-    audio.play();
+
+    const correctAudioPath = `audio/${correctLang}/${q.id}.mp3`;
+    new Audio(correctAudioPath).play();
 
     popup.style.borderColor = "green";
     popup.innerHTML = `
-      <h3>${capitalize(selectedLanguage)}</h3>
+      <h3>Correct</h3>
+      <p><strong>${capitalize(correctLang)}</strong></p>
       <p>${correctWord}</p>
       <img src="images/${q.id}.png">
       <button onclick="nextQuestion()">Prochaine question</button>
     `;
+
   } else {
-    // Play dull thud first
+
+    const clickedAudioPath = `audio/${langClicked}/${q.id}.mp3`;
+
     thudSound.play();
 
-    // Then play correct audio after short delay
     setTimeout(() => {
-      const audio = new Audio(audioPath);
-      audio.play();
+      new Audio(clickedAudioPath).play();
     }, 400);
 
     popup.style.borderColor = "red";
     popup.innerHTML = `
       <h3>Incorrect</h3>
-      <p><strong>${capitalize(selectedLanguage)}</strong></p>
+
+      <p>You chose:</p>
+      <p><strong>${capitalize(langClicked)}</strong></p>
+      <p>${wordClicked}</p>
+
+      <hr>
+
+      <p>Correct answer:</p>
+      <p><strong>${capitalize(correctLang)}</strong></p>
       <p>${correctWord}</p>
-      <img src="images/${q.id}.png">
+
       <button onclick="closePopup()">Continuer</button>
     `;
   }
 
   popup.style.display = "block";
 }
-
-
 
 // ------------------------
 // Close incorrect popup

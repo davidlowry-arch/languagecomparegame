@@ -4,7 +4,7 @@
 
 /* Base font scales with viewport width, clamped to stay readable */
 html {
-    font-size: clamp(18px, 5vw, 30px);
+    font-size: clamp(20px, 6vw, 34px);
 }
 
 body {
