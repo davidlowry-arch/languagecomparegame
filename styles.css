@@ -4,7 +4,7 @@
 
 /* Base font scales with viewport width, clamped to stay readable */
 html {
-    font-size: clamp(14px, 4vw, 24px);
+    font-size: clamp(18px, 5vw, 30px);
 }
 
 body {
@@ -26,8 +26,8 @@ h1, h2, h3 {
    =========================== */
 button {
     font-size: 1em;        /* inherits from base font */
-    padding: 0.5em 1em;    /* relative padding */
-    margin: 0.3em;
+    padding: 0.7em 1.2em;    /* relative padding */
+    margin: 0.4em;
     border-radius: 0.5em;
     border: 0.08em solid #333; /* scales with font */
     cursor: pointer;

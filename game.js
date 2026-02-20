@@ -35,7 +35,7 @@ fetch("data/words.json")
 // Main menu
 function initMainMenu(){
   document.body.innerHTML = `
-    <h1>Choisissez une langue (v1)</h1>
+    <h1>Choisissez une langue (v2)</h1>
     <div id="language-buttons">
       ${LANGUAGES.map(lang => `<button onclick="selectLanguage('${lang}')">${capitalize(lang)}</button>`).join('')}
     </div>
@@ -116,7 +116,6 @@ function loadQuestion(){
 
 
 // ------------------------
-// Check answer
 function checkAnswer(langClicked, wordClicked){
   const q = questions[currentQuestionIndex];
   const correctWord = q.forms[selectedLanguage];
@@ -159,6 +158,7 @@ function checkAnswer(langClicked, wordClicked){
 
   popup.style.display = "block";
 }
+
 
 
 // ------------------------
