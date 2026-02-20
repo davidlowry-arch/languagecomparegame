@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Jeu de mots - Langues africaines</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="main-menu">
+    <h1>Choisissez votre langue</h1>
+    <div id="language-buttons"></div>
+  </div>
+
+  <div id="game-screen" style="display:none;">
+    <h2 id="instructions">Trouvez 20 mots</h2>
+    <button id="start-game">Aller</button>
+  </div>
+
+  <div id="question-screen" style="display:none;">
+    <h2 id="question-gloss"></h2>
+    <img id="question-image" src="" alt="" width="300">
+    <div id="answer-buttons" class="answer-grid"></div>
+  </div>
+
+  <div id="popup" style="display:none;">
+    <div id="popup-content">
+      <h3 id="popup-gloss"></h3>
+      <p id="popup-language"></p>
+      <p id="popup-word"></p>
+      <button id="popup-next"></button>
+    </div>
+  </div>
+
+  <div id="final-screen" style="display:none;">
+    <h2 id="final-score"></h2>
+    <button id="play-again">Rejouer</button>
+    <button id="return-menu">Retour au menu</button>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
