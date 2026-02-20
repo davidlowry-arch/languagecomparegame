@@ -36,7 +36,7 @@ fetch("data/words.json")
 // Main menu
 function initMainMenu(){
   document.body.innerHTML = `
-    <h1>Choisissez une langue (v8)</h1>
+    <h1>Choisissez une langue (v9)</h1>
     <div id="language-buttons">
       ${LANGUAGES.map(lang => `<button onclick="selectLanguage('${lang}')">${capitalize(lang)}</button>`).join('')}
     </div>
@@ -85,31 +85,41 @@ function startGame(){
 }
 
 // ------------------------
-// Load question
-function loadQuestion(){
+function loadQuestion() {
   const q = questions[currentQuestionIndex];
 
+  // ----------------------
   // Progress indicator
   const progressHtml = `<div id="progress">Question ${currentQuestionIndex + 1} / ${questions.length}</div>`;
 
-  // Build array of options for this question
-  const options = LANGUAGES.map(lang => ({
+  // ----------------------
+  // Build array of options
+  let options = LANGUAGES.map(lang => ({
     lang: lang,
     word: q.forms[lang] || ""
   }));
 
+  // Shuffle options first to randomize which duplicate to keep if correct isn't present
+  options = shuffleArray(options);
+
+  // Deduplicate identical words
+  options = deduplicateOptions(options, selectedLanguage);
+
   // Sort alphabetically by displayed word
-  options.sort((a, b) => 
+  options.sort((a, b) =>
     a.word.localeCompare(b.word, 'fr', { sensitivity: 'base' })
   );
 
+  // Build buttons HTML
   const buttonsHtml = options.map(opt => {
     const encodedWord = encodeURIComponent(opt.word);
     return `<button onclick="checkAnswer('${opt.lang}', decodeURIComponent('${encodedWord}'))">
-               ${opt.word}
+              ${opt.word}
             </button>`;
   }).join('');
 
+  // ----------------------
+  // Render question
   document.body.innerHTML = `
     ${progressHtml}
     <h2>${q.gloss_fr}</h2>
@@ -119,6 +129,33 @@ function loadQuestion(){
     </div>
     <div id="popup"></div>
   `;
+}
+
+// ----------------------
+// Deduplication helper function
+function deduplicateOptions(options, correctLang) {
+  const seen = {}; // word -> index in result
+  const result = [];
+
+  options.forEach(opt => {
+    const word = opt.word;
+
+    if (word in seen) {
+      const existingIndex = seen[word];
+      const existingOpt = result[existingIndex];
+
+      // If current option is the correct answer, replace existing one
+      if (opt.lang === correctLang && existingOpt.lang !== correctLang) {
+        result[existingIndex] = opt;
+      }
+      // Otherwise ignore duplicate
+    } else {
+      seen[word] = result.length;
+      result.push(opt);
+    }
+  });
+
+  return result;
 }
 
 // ------------------------
