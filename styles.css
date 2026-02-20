@@ -22,16 +22,17 @@ h1, h2, h3 {
    Buttons
    =========================== */
 button {
-    font-size: 1.3em;       /* bigger font for word buttons */
-    padding: 1em 1.5em;
-    margin: 0.3em;          /* reduce spacing slightly */
+    font-size: 1.3em;       /* keep large font */
+    padding: 0.2em 0.5em;   /* drastically reduced padding */
+    margin: 0.3em;          /* small spacing between buttons */
     border-radius: 0.5em;
     border: 0.08em solid #333;
     cursor: pointer;
     background-color: #fff;
     transition: background-color 0.2s, transform 0.1s;
-    word-break: break-word;  /* prevent very long words from overflowing */
+    word-break: break-word;  /* prevent overflow of long words */
 }
+
 
 button:hover {
     background-color: #e0e0e0;

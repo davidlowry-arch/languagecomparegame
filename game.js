@@ -36,7 +36,7 @@ fetch("data/words.json")
 // Main menu
 function initMainMenu(){
   document.body.innerHTML = `
-    <h1>Choisissez une langue (v6)</h1>
+    <h1>Choisissez une langue (v7)</h1>
     <div id="language-buttons">
       ${LANGUAGES.map(lang => `<button onclick="selectLanguage('${lang}')">${capitalize(lang)}</button>`).join('')}
     </div>
